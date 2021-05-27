@@ -1,0 +1,16 @@
+<nb-card>
+    <nb-card-header>
+        <div class="icon">
+            <i class="ion-alert-circled"></i>
+        </div>
+        {{ title }}
+    </nb-card-header>
+    <nb-card-body>
+        <p *ngFor="let content of contents">
+            {{content}}
+        </p>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton status="primary" (click)="dismiss()">CERRAR</button>
+    </nb-card-footer>
+</nb-card>

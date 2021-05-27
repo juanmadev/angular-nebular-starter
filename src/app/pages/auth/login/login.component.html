@@ -1,0 +1,30 @@
+<h1 id="title" class="title">Título Login</h1>
+<p class="sub-title">Subtitulo login</p>
+
+
+<form (ngSubmit)="login()" [formGroup]="form" aria-labelledby="title">
+
+  <div class="form-control-group">
+    <label class="label" for="input-email">Usuario</label>
+    <input nbInput fullWidth formControlName="email" name="email" id="input-email" placeholder="Usuario" autofocus
+      [required]="getConfigValue('forms.validation.email.required')"
+      [attr.aria-invalid]="email.invalid && email.touched ? true : null">
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-password">Contraseña</label>
+    <input formControlName="password" nbInput fullWidth type="password" id="input-password" placeholder="Contraseña"
+      [required]="getConfigValue('forms.validation.password.required')"
+      [minlength]="getConfigValue('forms.validation.password.minLength')"
+      [maxlength]="getConfigValue('forms.validation.password.maxLength')"
+      [attr.aria-invalid]="password.invalid && password.touched ? true : null">
+
+  </div>
+
+  <div class="form-group">
+    <button type="submit" nbButton fullWidth status="success" [disabled]="!form.valid">
+      INICIAR SESIÓN
+    </button>
+  </div>
+
+</form>
